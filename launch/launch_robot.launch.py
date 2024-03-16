@@ -4,14 +4,15 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
-from launch.substitution import Command
+from launch.substitutions import Command
 from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnProcessStart
 
 def generate_launch_description():
 
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
-   
+    # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
+
     package_name='forklift' 
 
     rsp = IncludeLaunchDescription(
